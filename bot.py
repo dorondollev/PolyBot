@@ -17,11 +17,11 @@ class Bot:
         self.updater.start_polling()
         logger.info(f'{self.__class__.__name__} is up and listening to new messages....')
         self.updater.idle()
-
+"""
     def _message_handler(self, update, context):
         """Main messages handler"""
         self.send_text(update, f'Your original message: {update.message.text}')
-
+"""
     def send_video(self, update, context, file_path):
         """Sends video to a chat"""
         context.bot.send_video(chat_id=update.message.chat_id, video=open(file_path, 'rb'), supports_streaming=True)
