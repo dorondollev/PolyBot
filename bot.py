@@ -39,7 +39,7 @@ class QuoteBot(Bot):
         # if update.message.text == 'Don\'t quote me please':
         if update.message.text == 'stam':
             to_quote = False
-            self.send_text(updaet, f'No quote')
+            self.send_text(update, f'No quote')
         else:
             self.send_text(update, f'My original message: {update.message.text}', quote=to_quote)
 
