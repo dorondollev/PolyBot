@@ -36,12 +36,10 @@ class QuoteBot(Bot):
     def _message_handler(self, update, context):
         to_quote = True
 
-        # if update.message.text == 'Don\'t quote me please':
-        if update.message.text == 'stam':
+        if update.message.text == 'Don\'t quote me please':
             to_quote = False
-            self.send_text(update, f'No quote')
-        else:
-            self.send_text(update, f'My original message: {update.message.text}', quote=to_quote)
+        # self.send_text(update, f'No quote')
+        self.send_text(update, f'My original message: {update.message.text}', quote=to_quote)
 
 
 class YoutubeBot(Bot):
