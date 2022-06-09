@@ -36,7 +36,7 @@ class QuoteBot(Bot):
     def _message_handler(self, update, context):
         to_quote = True
 
-        #if update.message.text == 'Don\'t quote me please':
+        # if update.message.text == 'Don\'t quote me please':
         if update.message.text == 'stam':
             to_quote = False
 
@@ -51,6 +51,6 @@ if __name__ == '__main__':
     with open('.telegramToken') as f:
         _token = f.read()
 
-    my_bot = QuoteBot(_token)
+    my_bot = Bot(_token)
     my_bot.start()
 
