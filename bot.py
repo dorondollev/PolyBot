@@ -38,18 +38,22 @@ class QuoteBot(Bot):
 
         if update.message.text == 'Don\'t quote me please':
             to_quote = False
-        # self.send_text(update, f'No quote')
+
         self.send_text(update, f'My original message: {update.message.text}', quote=to_quote)
 
 
 class YoutubeBot(Bot):
-    pass
+
+    def _message_handler(self, update, context):
+        my_path = search_download_youtube_video(update.message.text)
+        self.send_video(update, context, file_path=my_path)
+        self.send_text(update, f'Downloaded to: {my_path.__str__()}')
 
 
 if __name__ == '__main__':
     with open('.telegramToken') as f:
         _token = f.read()
 
-    my_bot = QuoteBot(_token)
+    my_bot = YoutubeBot(_token)
     my_bot.start()
 
