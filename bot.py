@@ -43,11 +43,11 @@ class QuoteBot(Bot):
 
 
 class YoutubeBot(Bot):
-
     def _message_handler(self, update, context):
-        my_path = search_download_youtube_video(update.message.text)
-        self.send_video(update, context, file_path=my_path)
-        self.send_text(update, f'Downloaded to: {my_path.__str__()}')
+        my_video = search_download_youtube_video(update.message.text)
+        self.send_text(update, f'File downloaded successfully to: {my_video}')
+        my_str = ' '.join(my_video)
+        self.send_video(update, context, my_str)
 
 
 if __name__ == '__main__':
