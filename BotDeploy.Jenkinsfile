@@ -8,7 +8,6 @@ pipeline {
                 sh '''
                 echo "Deploying"
                 '''
-                }
             }
         }
     }
