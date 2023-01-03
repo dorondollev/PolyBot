@@ -15,7 +15,8 @@ pipeline {
         stage('Trigger Deploy') {
             steps {
                 build job: 'BotDeploy', wait: false, parameters: [
-                    string(name: 'BOT_IMAGE_NAME', value: "352708296901.dkr.ecr.us-east-1.amazonaws.com"
+                    string(name: 'BOT_IMAGE_NAME', value: "352708296901.dkr.ecr.us-east-1.amazonaws.com")
+            }
         }
     }
 }
