@@ -12,14 +12,10 @@ pipeline {
                 '''
             }
         }
-        stage('Stage II') {
+        stage('Trigger Deploy') {
             steps {
-                sh 'echo "stage II..."'
-            }
-        }
-        stage('Stage III ...') {
-            steps {
-                sh 'echo echo "stage III..."'
+                build job: 'BotDeploy', wait: false, parameters: [
+                    string(name: 'BOT_IMAGE_NAME', value: "352708296901.dkr.ecr.us-east-1.amazonaws.com")
             }
         }
     }
