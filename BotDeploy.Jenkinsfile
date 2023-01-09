@@ -11,7 +11,7 @@ pipeline {
                 }
 		stage("Generate Ansible Inventory") {
 			environment { 
-        			BOT_EC2_APP_TAG = ""dorons-bot
+        			BOT_EC2_APP_TAG = "dorons-bot"
         			BOT_EC2_REGION = "us-east-1"
     			}
         	
